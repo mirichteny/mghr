@@ -39,6 +39,8 @@ public class Main {
 			
 		}
 		
+		
+		
 		public void drawSquares(Grid g) {
 			
 			for(int i = 0 ; i < g.getRowSize(); i++) {
@@ -62,7 +64,7 @@ public class Main {
 			
 		}
 		
-		public Method displayMenu(HashMap<String, Class<?>> map, String aKey) {
+		public void searchForMethod(HashMap<String, Class<?>> map, String aKey) {
 			
 			Method determinedMenuMethod = null;
 			Class<?> myClass = map.get(aKey);
@@ -74,14 +76,16 @@ public class Main {
 				if( method.getName().contentEquals("displayMenu") ) {
 					
 					System.out.println("Method found.");
-					determinedMenuMethod = (Method) method;
+					
 					
 				}
 				
 			}
-			return determinedMenuMethod;
+			
 			
 		}
+		
+		
 		
 		public String getMenuOption() {
 			return "";
@@ -97,13 +101,29 @@ public class Main {
 			textBasedApp.titlePage();
 			String keyPressed = waitForButton.nextLine();
 			
+		
 			textBasedApp.myUniverse = new Universe();
 			
+			System.out.println(textBasedApp.myUniverse.displayMenu());
+			Scanner userInput = new Scanner(System.in);
+			System.out.println("What galaxy would you like to visit? : ");
+			String userAnswer = userInput.nextLine();
 			
+			while( textBasedApp.myUniverse.getGalaxies().containsKey(userAnswer) == false ) { //Checks if userAnswer is in HashMap of classes.
+				
+				System.out.println("Class doesn't exist, try again. ");
+				userAnswer = userInput.nextLine();
+			}
 			
-			
-			
-		
+			if( textBasedApp.myUniverse.getGalaxies().containsKey(userAnswer) ) {
+				System.out.println("Class found!");
+				Class<?> currentClass = textBasedApp.myUniverse.getGalaxies().get(userAnswer);
+				
+				
+			}
+			else {
+				System.out.println("That class doesn't exist. Try again.");
+			}
 			 
 			
 			}
