@@ -22,3 +22,5 @@ Welcome to Project Astra, a user-friendly information tool about our universe.
  Once you have compiled the files correctly without error, type in "java Main". And you should see a title page of our program.
  
   How to use our program (For textbased) Updated as of 02/24/2020
+
+  You will be prompted with a title page, press any key to advance. Then you will be displayed with Menu options, navigate through them by typing the exact keyword displayed by the menu option in order to access it. This is an information tool, so navigating to a specific object will give you information about that object.
