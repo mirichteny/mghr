@@ -14,9 +14,11 @@ public class Universe {
 			
 				
 				private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
-				private HashMap<Integer, Class<?>> myClassesByID = new HashMap<>(); //HashMap of classes with ID Keys
-				
-				
+				private HashMap<String, Class<?>> myIDs = new HashMap<>();
+				private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
+				private HashMap<String , String > myMenus = new HashMap<>();
+				private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
+							
 				
 				/*
 				 * ItemCollection constructor
@@ -24,12 +26,17 @@ public class Universe {
 				public Universe() {
 					
 					this.putClassInMap(myClasses, "Planets", Planet.class);
-					this.putClassInMap(myClasses, "Stars" , Stars.class);
-					this.putClassInMap(myClasses, "Galaxies", Galaxy.class);
+					this.putClassInMap(myIDs, "0003", Planet.class);
 					
-					this.putClassInMap(myClassesByID, 0001, Planet.class);
-					this.putClassInMap(myClassesByID, 0002 , Stars.class);
-					this.putClassInMap(myClassesByID, 0003, Galaxy.class);
+					this.putClassInMap(myClasses, "Stars" , Stars.class);
+					this.putClassInMap(myIDs , "0005" , Stars.class);
+					
+					this.putClassInMap(myClasses, "Galaxies", Galaxy.class);
+					this.putClassInMap(myIDs, "0004", Galaxy.class);
+					
+					this.putClassInMap(myGalaxies, "Milky Way" , MilkyWay.class);
+					this.putClassInMap(myClasses, "Earth" , Earth.class);
+					
 					
 				}
 	
@@ -40,11 +47,7 @@ public class Universe {
 					
 				}
 				
-				public void putClassInMap( HashMap<Integer, Class<?>> aMap  , Integer anID, Class<?> aClass) {
-					
-					aMap.put( anID, aClass );
-					
-				}
+				
 	
 				
 				
@@ -53,22 +56,65 @@ public class Universe {
 					return this.myClasses;
 				}
 				
+				public HashMap< String, Class<?> > getIDs(){
+					return this.myIDs;
+				}
+				public HashMap<String, Class<?> > getGalaxies(){
+					return this.myGalaxies;
+				}
+			
+				public Class<?> getItemByName(String aName ) {
+					
+					Class<?> determinedClass = Universe.class;
+					for( String s: this.getClasses().keySet() ) {
+						
+						if( this.getClasses().containsKey(aName) ) {
+							determinedClass = this.getClasses().get(s);
+							
+						}
+						else {
+							System.out.println("Name not found.");
+							return null;
+						}
+					
+					}
+					
+					return determinedClass;
+					
+					
+				}
+				
 				public Class<?> getItemByID(String ID) {
-					Class<?> item = Universe.class;
-					return item;
+					
+					Class<?> determinedClass = Universe.class;
+					for( String s: this.getIDs().keySet() ) {
+						
+						if (this.getIDs().containsKey(ID) ) {
+						          determinedClass = this.getIDs().get(s);
+						}
+						else {
+							System.out.println("ID not found. ");
+							return null;
+						}
+						
+						
+					}
+					
+					return determinedClass;
+				
+					
 				}
 				
-				public Class<?> getItemByName(String name) {
+				public boolean search(String keyword , Class<?> aClass , String className) {
 					
-					Class<?> item = this.getClasses().get(name);
-					return item;
+					if ( this.getClasses().containsKey(className) ) {
+						return true;
+					}
 					
+					
+					return false;
 				}
 				
-				public Class<?> search(String keyword) {
-					Class<?> searchedClass = this.getClasses().get(keyword);
-					return searchedClass;
-				}
 				
 				public void updateAll() {
 					
@@ -78,10 +124,27 @@ public class Universe {
 					
 				}
 				
-				public String displayMenu() {
-					String menuOutput = "THIS IS THE UNIVERSE MENU";
+				public void displayMenu() {
 					
-					return menuOutput;
+					String menuOutput = "THIS IS THE UNIVERSE MENU";
+					String output0 = " + + + + + + + + + + + + + + + + + + + + + + + + + + + + +";
+					String output1 = " +  -----------         -----------                      +";
+					String output2 = " + | Milky Way  |      | Andromeda |                     + " ;
+					String output3 = " +  -----------         -----------                      +";
+					String outputa = " +                                                       +";
+					String outputb = " +                                                       +";
+					String outputc = " +                                                       +";
+					String outputd = " +                                                       +";
+					String outpute = " +                                                       +";
+					String outputf = " +                                                       +";
+					String outputg = " +                                                       +";
+					String output4 = " + + + + + + + + + + + + + + + + + + + + + + + + + + + + + ";
+					String output5 = " Which galaxy would you like to visit? ";
+					
+					menuOutput = output0 + "\n" + output1 + "\n" + output2 + "\n" + output3 + "\n" + output4 + "\n" + output5;
+					System.out.println(menuOutput);
+					
+					
 				}
 
 }
