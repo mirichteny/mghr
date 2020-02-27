@@ -18,7 +18,7 @@ public class Galaxy {
 	// need a hashmap here
 	
 	 /* Getter method for the star info
-	Returns the star name and star info /*
+	Returns the star name and star info */
         public String getStarInfo(){
 	return starName + info;
 	// info is a variable for the info got from hashmap
@@ -30,10 +30,10 @@ public class Galaxy {
 	// need a hashmap here
 	
 	/* Getter method for the galaxy info
-	Returns the galaxy name and galaxy info /*
+	Returns the galaxy name and galaxy info */
 	public String getGalaxyInfo(){
 	return galaxyName + info;
 	// info is a variable for the info got from hashmap
 	}
 	
-}
+}         
