@@ -11,13 +11,12 @@ public class Universe {
 	
 		
 				
-			
-				
-				private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
-				private HashMap<String, Class<?>> myIDs = new HashMap<>();
-				private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
-				private HashMap<String , String > myMenus = new HashMap<>();
-				private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
+	// Creating different hashmaps for different classes 		
+	private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
+	private HashMap<String, Class<?>> myIDs = new HashMap<>();
+	private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
+	private HashMap<String , String > myMenus = new HashMap<>();
+	private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
 							
 				
 				/*
@@ -40,30 +39,29 @@ public class Universe {
 					
 				}
 	
-	
+				// This method loads different classes in the hashmap at different IDs
 				public void putClassInMap( HashMap<String, Class<?>> aMap  , String aKey, Class<?> aClass) {
 					
 					aMap.put( aKey, aClass );
 					
 				}
 				
-				
-	
-				
-				
-				
+				// This method returns a list of classes in the hashmap
 				public HashMap< String, Class<?> > getClasses(){
 					return this.myClasses;
 				}
 				
+	                       // This method returns a list of IDs for classes in the hashmap
 				public HashMap< String, Class<?> > getIDs(){
 					return this.myIDs;
 				}
+	
+				// This method returns a list of galaxies
 				public HashMap<String, Class<?> > getGalaxies(){
 					return this.myGalaxies;
 				}
 			
-				public Class<?> getItemByName(String aName ) {
+				public Class<?> getItemByName(String aName) {
 					
 					Class<?> determinedClass = Universe.class;
 					for( String s: this.getClasses().keySet() ) {
