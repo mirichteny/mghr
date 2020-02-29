@@ -6,5 +6,4 @@
 public class MilkyWay extends Galaxy {
   super(aGalaxyName, aStarname);
   
-
 }
