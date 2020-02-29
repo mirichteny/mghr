@@ -32,7 +32,7 @@ public class Stars {
 			private String starColor;
 			private double radius;
 			private double mass;
-			
+			//sets the instance variables of a star
 			public Stars() { 
 				
 				this.starTypes = new ArrayList<String>();
@@ -47,8 +47,8 @@ public class Stars {
 				
 				
 			}
-			
-			
+			//Checks whether method setStarType contatins star and assigns instance variable to it
+			//@param aStarType type of a star
 			
 			public void setStarType(String aStarType) {
 					for( String star: this.getStarTypes()) {
@@ -59,17 +59,19 @@ public class Stars {
 					}
 			}
 			
+			//@param aLuminosity luminosity of a star
 			public void setLuminosity(double aLuminosity) {
 				this.luminosity = aLuminosity;
 			}
+			//@param aColor color of a star
 			public void setStarColor(String aColor) {
 				this.starColor = aColor;
 			}
-			
+			//@return the type of a star
 			public String getStarType() {
 				return this.starType;
 			}
-			
+			// adds star types
 			public void addAll() {
 				
 				this.getStarTypes().add("hypergiants");
@@ -80,13 +82,14 @@ public class Stars {
 				this.getStarTypes().add("dwarfs");
 				this.getStarTypes().add("neutronstars");
 			}
-			
+			//@return luminosity of a star
 			public double getLuminosity() {
 				
 				return this.luminosity;
 				
 			}
-			
+			//Returns a list of star types by adding them to it 
+			//@return a list of star types
 			public ArrayList<String> getStarTypes(){
 				ArrayList<String> copyStarTypes = new ArrayList<String>();
 				
