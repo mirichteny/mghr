@@ -1,5 +1,6 @@
 /*
  * ItemCollection Class 
+ * The following class is in charge of accessing different classes and accessing the information
  * 
  * 
  * 
@@ -11,18 +12,27 @@ public class Universe {
 	
 		
 				
-	// Creating different hashmaps for different classes 		
-	private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
-	private HashMap<String, Class<?>> myIDs = new HashMap<>();
-	private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
-	private HashMap<String , String > myMenus = new HashMap<>();
-	private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
+				/*
+				 * Instance variables of hashmaps. 
+				 * 
+				 */
+				private FileHandler fileHandler; //Unused variable, will end up implementing to update textbased later.
+				private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
+				private HashMap<String, Class<?>> myIDs = new HashMap<>();
+				private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
+				private HashMap<String , String > myMenus = new HashMap<>();
+				private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
 							
 				
 				/*
 				 * ItemCollection constructor
+				 * Instantiates classes (hard coding approach)
 				 */
 				public Universe() {
+					/*
+					 * Fills the hashmap "myClasses" with every class that exists in our program
+					 *
+					 */
 					
 					this.putClassInMap(myClasses, "Planets", Planet.class);
 					this.putClassInMap(myIDs, "0003", Planet.class);
@@ -39,29 +49,43 @@ public class Universe {
 					
 				}
 	
-				// This method loads different classes in the hashmap at different IDs
+				/*
+				 * The method putClassInMap adds a key and a value to a hashmap specific in the arugments.
+				 * 
+				 * 
+				 */
 				public void putClassInMap( HashMap<String, Class<?>> aMap  , String aKey, Class<?> aClass) {
 					
 					aMap.put( aKey, aClass );
 					
 				}
 				
-				// This method returns a list of classes in the hashmap
+				
+	
+				/*  Getters and setters
+				 * 
+				 * 
+				 */
+				
+				
 				public HashMap< String, Class<?> > getClasses(){
 					return this.myClasses;
 				}
 				
-	                       // This method returns a list of IDs for classes in the hashmap
+				
 				public HashMap< String, Class<?> > getIDs(){
 					return this.myIDs;
 				}
-	
-				// This method returns a list of galaxies
 				public HashMap<String, Class<?> > getGalaxies(){
 					return this.myGalaxies;
 				}
 			
-				public Class<?> getItemByName(String aName) {
+				/*
+				 * Loops through a hashmap and searches if the key is equivalent to the parameter "aName".
+				 * If key found, returns the class, else it will return null.
+				 * 
+				 */
+				public Class<?> getItemByName(String aName ) {
 					
 					Class<?> determinedClass = Universe.class;
 					for( String s: this.getClasses().keySet() ) {
@@ -82,7 +106,16 @@ public class Universe {
 					
 				}
 				
+				/*
+				 * Searches through the file with all ID's stored, instead of trying to access the class.
+				 * 
+				 * 
+				 */
+				
 				public Class<?> getItemByID(String ID) {
+					
+					fileHandler = new FileHandler();
+					fileHandler.openFiles("Universe.txt");
 					
 					Class<?> determinedClass = Universe.class;
 					for( String s: this.getIDs().keySet() ) {
@@ -102,6 +135,11 @@ public class Universe {
 				
 					
 				}
+				/*
+				 * 
+				 * 
+				 * Unused method
+				 */
 				
 				public boolean search(String keyword , Class<?> aClass , String className) {
 					
@@ -113,7 +151,11 @@ public class Universe {
 					return false;
 				}
 				
-				
+				/*
+				 * 
+				 * 
+				 * Unused method
+				 */
 				public void updateAll() {
 					
 				}
@@ -122,6 +164,11 @@ public class Universe {
 					
 				}
 				
+				/*
+				 * 
+				 * Display menu method, different or each class currently
+				 * 
+				 */
 				public void displayMenu() {
 					
 					String menuOutput = "THIS IS THE UNIVERSE MENU";
