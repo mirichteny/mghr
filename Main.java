@@ -3,11 +3,17 @@ import java.util.*;
 /*
  * 
  * The Main class is in charge of all the menu option handling and transitions between classes.
- * 
+ * 			Methods:
+ * 					displayMenu()
+ *					getMenuOption()
+ *					getUniverse()
+ *					getCurrentMenuOption()
  * 
  */
 public class Main {
-
+	
+	
+		
 		private Universe myUniverse;    // itemCollection
 		private HashMap< String , String > myMenus = new HashMap<>(); // HashMap of Menus
 		private String currentMenuOption;
@@ -80,6 +86,10 @@ public class Main {
 			}
 			
 			return desiredMenu;
+		}
+		
+		public Universe getUniverse() {
+			return this.myUniverse;
 		}
 		
 		public HashMap<String , String> getMenus(){
@@ -210,7 +220,7 @@ public class Main {
 				System.out.println("Does not exist, try again ");
 				userAnswer = userInput.nextLine();
 			}
-			
+			//Commented out below code due to situational.
 				/*
 				for ( String menuOption: textBasedApp.menuOptions) { //Loop through arraylist of menu options and updates current menu .
 					if( menuOption.equalsIgnoreCase(userAnswer)) {
