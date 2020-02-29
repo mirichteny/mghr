@@ -24,3 +24,17 @@ Welcome to Project Astra, a user-friendly information tool about our universe.
   How to use our program (For textbased) Updated as of 02/24/2020
 
   You will be prompted with a title page, press any key to advance. Then you will be displayed with Menu options, navigate through them by typing the exact keyword displayed by the menu option in order to access it. This is an information tool, so navigating to a specific object will give you information about that object.
+  
+    By now it should ask "What galaxy do you want to explore?"
+                        There is only one keyword that will work to advance, : "Milky Way". As the Andromeda class is not set up yet.
+                        
+    Next it will ask what objects you want to explore in the galaxy:
+              Available key words: "Planets" , "Stars" 
+              If you chose "Stars", it should display a menu of buttons including the sun and other stars.
+              If you chose "Planets" in the scanner, it should display a menu of all the planets in our current solar system.
+              Only one keyword works currently 
+                    "Earth" - Typing earth will display information about earth.
+                    
+              There is no way to go back from menus as it has not been implemented yet, but will be fixed soon.
+                    
+                    
