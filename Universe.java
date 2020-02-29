@@ -1,7 +1,7 @@
 /*
  * ItemCollection Class 
  * The following class is in charge of accessing different classes and accessing the information
- * 
+ * 			Note: This class along with the Main class needs to be reworked still to implement the file handler class.
  * 
  * 
  */
