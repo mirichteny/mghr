@@ -17,19 +17,23 @@ public class Earth extends Planet {
 				private double age;
 				
 				
-				
+				//sets radius and a mass of a planet as parameters of Earth from Planet class
+				//@param aPlanetRadius radius of a planet
+				//@param aPlanetMass mass of a planet
 				public Earth(double aPlanetRadius, double aPlanetMass) {
 					super(aPlanetRadius, aPlanetMass);
 				}
 				
-				
+				//returns an orbital period of Earth class
+				//@return an orbital period
 				public double getOrbitalPeriod() {
 					
 					return this.orbitalPeriod;
 				}
 				
 				
-				
+				//returns countries from a list of this class
+				//@return countries
 				public ArrayList<String> getCountries(){
 					return this.countries;
 				}
@@ -40,7 +44,8 @@ public class Earth extends Planet {
 					return "";
 				}
 				
-				
+				//Adds a property to Earth properties of this class
+				//@param aProperty property of Earth
 				public void addProperties(String aProperty) {
 					
 					this.earthProperties.add(aProperty);
