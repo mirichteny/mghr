@@ -11,7 +11,7 @@ public class Countries  {
 
 		HashMap<String,Integer>  map = new HashMap<String, Integer>();
 			map.put("Canada", 500);
-			map.put("US", 300000000);
+			map.put("USA", 300000000);
 			map.put("England", 700000000);
 			map.put("Australia", 250000000);
 			map.put("Mexico", 860000000);
