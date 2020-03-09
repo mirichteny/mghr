@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.FlowPane;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
 /* This class is a GUI version of the Planets text based class which creates eight buttons 
@@ -30,6 +31,7 @@ public class Planets_GUI extends Application {
 	   root.getChildren().add(new Button("Neptune"));
 
 	   Scene scene = new Scene(root, 500, 200);
+	   FlowPane.setAlignment(Pos.CENTER);
 	   primaryStage.setTitle("Planets");
 	   primaryStage.setScene(scene);
 	   primaryStage.show();
