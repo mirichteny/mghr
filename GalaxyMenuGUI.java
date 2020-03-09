@@ -10,8 +10,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/* a GUI version of the galaxy text based class which creates two buttons 
+namely Andromeda and Milky Way and aligns them to the center of the stage */
 public class GalaxyMenuGUI extends Application {
 	
+	// creating buttons for the galaxy
 	private Button andromedaButton;
 	private Button milkyWayButton;
 	
@@ -21,13 +24,13 @@ public class GalaxyMenuGUI extends Application {
 	
 	public void start(Stage primaryStage) throws Exception {
 	
-	FlowPane flowPane = new FlowPane();
-	VBox root = new VBox(10);
+	FlowPane flowPane = new FlowPane();    // creating a flowpane
+	VBox root = new VBox(10);              // creating a root of vertical box
 	
 	root.getChildren().addAll( new Button("Andromeda"), new Button("Milky Way"));
 	
 	flowPane.getChildren().add(root);
-	flowPane.setAlignment(Pos.CENTER);
+	flowPane.setAlignment(Pos.CENTER);    // aligning the buttons to the center of the stage
 	
 	
 	primaryStage.setScene(new Scene(flowPane));
