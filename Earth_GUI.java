@@ -10,9 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 public class Earth_GUI extends Application{
-      public static void main(String[] args)
+      public static void main (String[] args)
    {
-      launch(args);
+      launch (args);
    }
    
    public void start(Stage primaryStage) throws Exception
@@ -23,15 +23,16 @@ public class Earth_GUI extends Application{
 	  FlowPane centerPane = new FlowPane();
 	  centerPane.setVgap(5);
 	  centerPane.setHgap(5);
+	   
 	  // Label and textfield for name
-	  centerPane.getChildren().add(new Label("Description"));
-	  TextField txtName = new TextField("Enter description.");
-	  txtName.setPrefWidth(100);
-	  centerPane.getChildren().add(txtName);
+	  centerPane.getChildren().add (new Label("Description"));
+	  TextField txtName = new TextField ("Enter description.");
+	  txtName.setPrefWidth (100);
+	  centerPane.getChildren().add (txtName);
+	   
 	  // Label and textarea for description
-	  centerPane.getChildren().add(new Label("Info"));
-	  TextArea txtInfo = new TextArea(
-                  "Earth description.");
+	  centerPane.getChildren().add (new Label ("Info"));
+	  TextArea txtInfo = new TextArea ("Earth description");
 	  txtInfo.setPrefWidth(200);
 	  txtInfo.setPrefRowCount(8);
 	  txtInfo.setPrefColumnCount(40);
@@ -45,9 +46,9 @@ public class Earth_GUI extends Application{
 	  root.setCenter(centerPane);
 
    	  Scene scene = new Scene(root, 450, 250);
-      primaryStage.setTitle("Earth");
-      primaryStage.setScene(scene);
-      primaryStage.show();
+          primaryStage.setTitle("Earth");
+      	  primaryStage.setScene(scene);
+     	  primaryStage.show();
     }
 }
 
