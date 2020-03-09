@@ -9,6 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
+/* This class is a GUI version of the Earth text based class which creates a button 
+Countries and creates a text area saying "Earth description" */
 public class Earth_GUI extends Application{
       public static void main (String[] args)
    {
