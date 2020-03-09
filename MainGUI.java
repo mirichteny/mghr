@@ -34,7 +34,7 @@ public class MainGUI extends Application{
 	private Button backButtonPlanets;
 	private Button backButtonStars;
 	private Button backButtonAndromeda;
-	private TextField serachBar;
+	private TextField searchBar;
 	private	Stage window;
 	private Image image1;
 	private Scene currentScene,previousScene,introMenu,galaxyMenu,milkyWayMenu,andromedaMenu,planetMenu,starsMenu,emptyMenu;
