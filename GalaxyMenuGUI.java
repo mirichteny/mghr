@@ -10,7 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/* a GUI version of the galaxy text based class which creates two buttons 
+/* This class is a GUI version of the galaxy text based class which creates two buttons 
 namely Andromeda and Milky Way and aligns them to the center of the stage */
 public class GalaxyMenuGUI extends Application {
 	
