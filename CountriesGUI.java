@@ -1,5 +1,6 @@
 package javaFX;
 
+// importing necessary packages for javaFX
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -11,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Countries extends Application {
-	
+	// creating buttons for some countries
 	private Button canadaButton;
 	private Button usaButton;
 	private Button englandButton;
@@ -24,13 +25,14 @@ public class Countries extends Application {
 	}
 	
 	public void start(Stage primaryStage) throws Exception {
-	
+	// creating a flow pane and a root of horizontal box
 	FlowPane flowPane = new FlowPane();
 	HBox root = new HBox(20);
 	
 	root.getChildren().addAll(new Button("Canada"), new Button("USA"), new Button("England"), new Button("Australia"), new Button("Mexico") );
 	
 	flowPane.getChildren().add(root);
+	// aligning the buttons to the center of the stage
 	flowPane.setAlignment(Pos.CENTER);
 	
 	
