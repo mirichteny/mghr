@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
@@ -16,9 +17,9 @@ public class Planets_GUI extends Application {
    
    public void start(Stage primaryStage) throws Exception
    {
-	   FlowPane root = new FlowPane();
-	   root.setVgap(20);
-	   root.setHgap(10);
+	   FlowPane flowPane = new FlowPane();
+	   HBox root = new HBox(20);         // creating a root of horizontal box
+
 	   
 	   // adding all the buttons created
 	   root.getChildren().add(new Button("Mercury"));
@@ -30,12 +31,11 @@ public class Planets_GUI extends Application {
 	   root.getChildren().add(new Button("Uranus"));
 	   root.getChildren().add(new Button("Neptune"));
 
-	   Scene scene = new Scene(root, 500, 200);
-	   FlowPane.setAlignment(Pos.CENTER);
+	   flowPane.getChildren().add(root);
+	   flowPane.setAlignment(Pos.CENTER);           // aligning the planet buttons to the center
 	   primaryStage.setTitle("Planets");
-	   primaryStage.setScene(scene);
+	   primaryStage.setScene(new Scene(flowPane));
 	   primaryStage.show();
    }
 }
 
-}
