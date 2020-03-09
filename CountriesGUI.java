@@ -11,6 +11,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/* This class is a GUI version of the countries text based class which creates five buttons 
+namely Canada, USA, England, Australia and Mexico and aligns them to the center of the stage */
 public class Countries extends Application {
 	// creating buttons for some countries
 	private Button canadaButton;
