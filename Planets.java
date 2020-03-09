@@ -1,5 +1,5 @@
 
-public class Planet {
+public class Planets {
 	/*
 	 * The planet class is a blueprint for all the planets in the solar system including earth.
 	 * 
