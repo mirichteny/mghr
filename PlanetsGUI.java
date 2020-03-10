@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 
 /* This class is a GUI version of the Planets text based class which creates eight buttons 
 namely Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune and aligns them to the center of the stage */
-public class Planets_GUI extends Application {
+public class PlanetsGUI extends Application {
   public static void main(String[] args)
    {
       launch(args);
