@@ -1,7 +1,7 @@
 package GUI;
 import LogicClasses.Universe;
 /*
- * MainGUI class corresponds to Main logic class.
+ * GUIApp class corresponds to Main logic class.
  * 
  */
 
@@ -28,7 +28,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 
-public class MainGUI extends Application{
+public class GUIApp extends Application{
 	
 	private Universe itemCollection;
 	private Button titlePageStartButton;
