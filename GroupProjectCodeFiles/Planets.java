@@ -1,7 +1,7 @@
 
-public class Planet {
+public class Planets {
 	/*
-	 * The planet class is a blueprint for all the planets in the solar system including earth.
+	 * The planets class is a blueprint for all the planets in the solar system including earth.
 	 * 
 	 * 
 	 * 
@@ -17,12 +17,12 @@ public class Planet {
 					private double planetRadius;
 					private final String ID = "0003";
 					
-			public Planet() {
+			public Planets() {
 				this.gravity = G*planetMass*(1/Math.pow(planetRadius, 2)); // Equation for gravity of a planet
 				this.planetMass = 5.683*Math.pow(10,26); //Average planet mass
 			}
 			
-			public Planet(double aPlanetRadius, double aPlanetMass) {
+			public Planets(double aPlanetRadius, double aPlanetMass) {
 				this.gravity = G*planetMass*(1/Math.pow(planetRadius, 2)); // Equation for gravity of a planet
 				this.planetMass = 5.683*Math.pow(10,26); //Average planet mass
 			}
