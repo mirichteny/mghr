@@ -8,9 +8,9 @@ public class Earth extends Planet {
 	
 				private final String PLANET_TYPE = "terrestrial";
 				private ArrayList<String> earthProperties = new ArrayList<String>();
-				private final double mass = 5.972*Math.pow(10,24);
-				private final double gravity = 9.81; // m/s^2
-				private final double planetRadius = 6.3*Math.pow(10, 4);
+				private final double MASS = 5.972*Math.pow(10,24);
+				private final double GRAVITY = 9.81; // m/s^2
+				private final double PLANET_RADIUS = 6.3*Math.pow(10, 4);
 				private int planetsOrder = 3; //Position in solar system of planets relative to the sun
 				private double orbitalPeriod = 365.25; // days
 				private ArrayList<String> countries;
