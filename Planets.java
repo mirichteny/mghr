@@ -17,7 +17,7 @@ public class Planets {
 		private double planetRadius;
 			
 	               // This is a default constructor defining the formula for gravity and planet mass of planets
-			public Planet() {
+			public Planets() {
 				this.gravity = G*planetMass*(1/Math.pow(planetRadius, 2)); // Equation for gravity of a planet
 				this.planetMass = 5.683*Math.pow(10,26); //Average planet mass
 			}
