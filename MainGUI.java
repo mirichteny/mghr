@@ -1,4 +1,5 @@
 package GUI;
+import LogicClasses.Universe;
 /*
  * MainGUI class corresponds to Main logic class.
  * 
@@ -16,8 +17,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -26,19 +30,22 @@ import javafx.scene.layout.VBox;
 
 public class MainGUI extends Application{
 	
+	private Universe itemCollection;
 	private Button titlePageStartButton;
 	private Button titlePageExitButton;
 	private Button backButton;
 	private Button backButtonGalaxy;
 	private Button backButtonMilkyWay;
 	private Button backButtonPlanets;
+	private Button backButtonEarth;
 	private Button backButtonStars;
 	private Button backButtonAndromeda;
-	private TextField searchBar;
+	private TextField serachBar;
 	private	Stage window;
-	private Image image1;
-	private Scene currentScene,previousScene,introMenu,galaxyMenu,milkyWayMenu,andromedaMenu,planetMenu,starsMenu,emptyMenu;
-	private int windowWidth,windowHeight;
+	private Image appBackground;
+	private Scene currentScene,previousScene,introMenu,galaxyMenu,milkyWayMenu,andromedaMenu,planetMenu,starsMenu,earthMenu,emptyMenu;
+	private final int windowWidth = 700;
+	private final int windowHeight = 700;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -48,14 +55,17 @@ public class MainGUI extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		
 		window = primaryStage;
-		backButton = new Button("Back");
+		appBackground = new Image("SpaceBackGround.jpg");
+		ImageView imageView = new ImageView();
+		imageView.setImage(appBackground);
+		
 		backButtonGalaxy = new Button("Back");
 		backButtonMilkyWay = new Button("Back");
 		backButtonPlanets = new Button("Back");
+		backButtonEarth = new Button("Back");
 		backButtonStars = new Button("Back");
 		backButtonAndromeda = new Button("Back");
-		windowWidth = 500;
-		windowHeight = 500;
+		
 		
 		//Handling  backButton events
 	
@@ -63,35 +73,44 @@ public class MainGUI extends Application{
 			//For galaxy
 		backButtonGalaxy.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				window.setScene(previousScene);
+				window.setScene(introMenu);
 			}
 		});
 		
 		//For milky way
 		backButtonMilkyWay.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				window.setScene(previousScene);
+				window.setScene(galaxyMenu);
 			}
 		});
 				
 			//For andromeda
 		backButtonAndromeda.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				window.setScene(previousScene);
+				window.setScene(galaxyMenu);
 			}
 		});
 				
 			//For planets
 		backButtonPlanets.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				window.setScene(previousScene);
+				window.setScene(milkyWayMenu);
 			}
 		});
-				
+		
+		
+			//For earth
+		 backButtonEarth.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					window.setScene(planetMenu);
+				}
+			});
+			
+		
 			//For stars
 		backButtonStars.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				window.setScene(previousScene);
+				window.setScene(milkyWayMenu);
 			}
 		});
 			
@@ -107,6 +126,7 @@ public class MainGUI extends Application{
 				window.setScene(galaxyMenu);
 				currentScene = window.getScene();
 				previousScene = introMenu;
+				
 				
 				
 				
@@ -131,7 +151,7 @@ public class MainGUI extends Application{
 		titlePageVBox.getChildren().addAll(titlePageStartButton,titlePageExitButton);
 		
 		StackPane titlePagePane = new StackPane();
-		titlePagePane.getChildren().addAll(titlePageVBox);
+		titlePagePane.getChildren().addAll(imageView,titlePageVBox);
 		
 		introMenu = new Scene(titlePagePane,windowWidth,windowHeight);
 		
@@ -199,6 +219,8 @@ public class MainGUI extends Application{
 		searchButton.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				String galaxyUserOutput = userInput.getText();
+			
+				System.out.println(galaxyUserOutput);
 				
 				if( galaxyUserOutput.equalsIgnoreCase("Planets")) {
 					window.setScene(planetMenu);
@@ -206,7 +228,7 @@ public class MainGUI extends Application{
 					previousScene = milkyWayMenu;
 					
 				}
-				if( galaxyUserOutput.equalsIgnoreCase("Stars")) {
+				else if( galaxyUserOutput.equalsIgnoreCase("Stars")) {
 					window.setScene(starsMenu);
 					currentScene = window.getScene();
 					previousScene = milkyWayMenu;
@@ -243,6 +265,12 @@ public class MainGUI extends Application{
 		Button uranusButton = new Button("Uranus");
 		Button neptuneButton = new Button("Neptune");
 		
+		earthButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				window.setScene(earthMenu);
+			}
+		});
+		
 		
 		
 		//Defining planet layout
@@ -250,7 +278,7 @@ public class MainGUI extends Application{
 	    planetsLayout.setVgap(20);
 		planetsLayout.setHgap(10);
 
-		planetsLayout.getChildren().addAll(mercuryButton,venusButton,earthButton,marsButton,saturnButton,jupiterButton,uranusButton,neptuneButton);
+		planetsLayout.getChildren().addAll(mercuryButton,venusButton,earthButton,marsButton,saturnButton,jupiterButton,uranusButton,neptuneButton,backButtonPlanets);
 		
 		//Instantiating the planetMenu
 	     planetMenu = new Scene(planetsLayout, windowWidth, windowHeight);
@@ -282,6 +310,44 @@ public class MainGUI extends Application{
 	 	
 	 	starsMenu = new Scene(starLayout,windowWidth,windowHeight);	     
 		
+	 	//Defining earth menu layout
+	 	
+	 	 BorderPane earthBorder = new BorderPane();
+
+		  // FlowPane with a TextField and TextArea
+		  FlowPane centerPaneEarth = new FlowPane();
+		  centerPaneEarth.setVgap(5);
+		  centerPaneEarth.setHgap(5);
+		   
+		  // Label and textfield for name
+		  
+		  
+		  
+		  
+		 
+		  centerPaneEarth.getChildren().addAll(backButtonEarth,new Label("Description") );
+		  TextField txtName = new TextField ("Enter description.");
+		  txtName.setPrefWidth (100);
+		  centerPaneEarth.getChildren().add (txtName);
+		   
+		  // Label and textarea for description
+		  centerPaneEarth.getChildren().add (new Label ("Info"));
+		  TextArea txtInfo = new TextArea ("Earth description");
+		  txtInfo.setPrefWidth(200);
+		  txtInfo.setPrefRowCount(8);
+		  txtInfo.setPrefColumnCount(40);
+		  centerPaneEarth.getChildren().add(txtInfo);
+
+		  //HBox with button
+		  HBox topPane = new HBox();
+		  topPane.getChildren().add(new Button("Countries"));
+
+		  // Adds the FlowPane to the center
+		  earthBorder.setCenter(centerPaneEarth);
+		  
+		  //Instantiating earth menu
+	   	  earthMenu = new Scene(earthBorder, windowWidth, windowHeight);
+	 	
 		//Indicating first menu to pop up when application starts
 		window.setScene(introMenu);
 		currentScene = window.getScene();
