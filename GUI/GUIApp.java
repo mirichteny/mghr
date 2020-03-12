@@ -54,7 +54,7 @@ public class GUIApp extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		
 		window = primaryStage;
-		appBackground = new Image("SpaceBackGround.jpg");
+		appBackground = new Image("file:SpaceBackGround.jpg");
 		ImageView imageView = new ImageView();
 		imageView.setImage(appBackground);
 		
