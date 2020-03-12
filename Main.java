@@ -253,8 +253,8 @@ public class Main {
 						userIn = reader.nextLine();
 					}
 					Class<?> nextClass = textBasedApp.myUniverse.getClasses().get(userIn);
-					if ( nextClass == Planet.class ) {
-						Planet p = new Planet();
+					if ( nextClass == Planets.class ) {
+						Planets p = new Planets();
 						System.out.println(p.getPlanetDescription());
 						System.out.println(p.displayMenu());
 						Scanner planetReader = new Scanner(System.in);
