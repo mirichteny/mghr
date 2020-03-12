@@ -233,9 +233,7 @@ public class MainGUI extends Application{
 			public void handle(ActionEvent event) {
 				String galaxyUserOutput = userInput.getText();
 				
-				mainController = new MainController();
 				
-				System.out.println(mainController.getUserRequestedSearch(userInput.getText()));
 				
 				
 				if( galaxyUserOutput.equalsIgnoreCase("Planets")) {
