@@ -10,12 +10,12 @@ import LogicClasses.*;
 
 
 
-public class MainController {
+public class Controller {
 	
 			private GUIApp myGUI;
 			private Universe myUniverse;
 			
-			public MainController() {
+			public Controller() {
 				
 				GUIApp myGUI = new GUIApp();
 				myUniverse = new Universe();
