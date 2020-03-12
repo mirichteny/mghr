@@ -1,7 +1,7 @@
 Welcome to Project Astra, a user-friendly information tool about our universe. 
 
 
-(For text-based)(Updated as of 02/24/2020
+(For text-based)(Updated as of 02/24/2020)
   To effectively run this program, the following files are needed on your computer
           -Main.java  <-- The file you must run for later
           -Universe.java
