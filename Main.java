@@ -30,7 +30,7 @@ public class Main {
 		public Main() {
 			Galaxy galaxy = new Galaxy();
 			MilkyWay milky = new MilkyWay();
-			Planet pl = new Planet();
+			Planets pl = new Planets();
 			Earth earth = new Earth();
 			Stars stars = new Stars();
 			
