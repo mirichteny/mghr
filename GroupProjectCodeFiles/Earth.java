@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.ArrayList;
-public class Earth extends Planet {
+public class Earth extends Planets {
 
 	
 				
