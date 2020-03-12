@@ -30,7 +30,6 @@ import javafx.scene.layout.VBox;
 
 public class GUIApp extends Application{
 	
-	private Universe itemCollection;
 	private Button titlePageStartButton;
 	private Button titlePageExitButton;
 	private Button backButton;
