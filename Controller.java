@@ -1,5 +1,7 @@
+package Controllers;
+import GUI.GUIApp;
 
-import GUI.MainGUI;
+import GUI.GUIApp;
 import LogicClasses.*;
 /*
  * Controller class communicates with GUI and textBased logic.
@@ -10,11 +12,12 @@ import LogicClasses.*;
 
 public class MainController {
 	
-			private MainGUI myGUI;
+			private GUIApp myGUI;
 			private Universe myUniverse;
 			
 			public MainController() {
-				myGUI = new MainGUI();
+				
+				GUIApp myGUI = new GUIApp();
 				myUniverse = new Universe();
 				
 				
@@ -26,7 +29,7 @@ public class MainController {
 			}
 			
 			public void update() {
-				myUniverse.updateScenes();
+				myUniverse.updateMenus();
 			}
 			
 			
