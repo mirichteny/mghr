@@ -5,7 +5,7 @@ Welcome to Project Astra, a user-friendly information tool about our universe.
   To effectively run this program, the following files are needed on your computer
           -Main.java  <-- The file you must run for later
           -Universe.java
-          -Planet.java
+          -Planets.java
           -Earth.java
           -Countries.java
           -Grid.java
