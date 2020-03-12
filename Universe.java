@@ -34,8 +34,8 @@ public class Universe {
 					 *
 					 */
 					
-					this.putClassInMap(myClasses, "Planets", Planet.class);
-					this.putClassInMap(myIDs, "0003", Planet.class);
+					this.putClassInMap(myClasses, "Planets", Planets.class);
+					this.putClassInMap(myIDs, "0003", Planets.class);
 					
 					this.putClassInMap(myClasses, "Stars" , Stars.class);
 					this.putClassInMap(myIDs , "0005" , Stars.class);
