@@ -1,3 +1,4 @@
+package LogicClasses;
 /*
  * ItemCollection Class 
  * The following class is in charge of accessing different classes and accessing the information
@@ -18,11 +19,11 @@ public class Universe {
 				 */
 				private FileHandler fileHandler; //Unused variable, will end up implementing to update textbased later.
 				private HashMap<String, Class<?>> myClasses = new HashMap<>(); // HashMap of classes with named Keys
-				private HashMap<String, Class<?>> myIDs = new HashMap<>();
 				private HashMap<String, Class<?> > myGalaxies = new HashMap<>(); //The galaxies.
 				private HashMap<String , String > myMenus = new HashMap<>();
 				private HashMap< String,  HashMap<String, Class<?> > > allHashMaps = new HashMap<>();
-							
+				private String currentMenu;
+				private String previousMenu;
 				
 				/*
 				 * ItemCollection constructor
@@ -34,18 +35,7 @@ public class Universe {
 					 *
 					 */
 					
-					this.putClassInMap(myClasses, "Planets", Planets.class);
-					this.putClassInMap(myIDs, "0003", Planets.class);
-					
-					this.putClassInMap(myClasses, "Stars" , Stars.class);
-					this.putClassInMap(myIDs , "0005" , Stars.class);
-					
-					this.putClassInMap(myClasses, "Galaxies", Galaxy.class);
-					this.putClassInMap(myIDs, "0004", Galaxy.class);
-					
-					this.putClassInMap(myGalaxies, "Milky Way" , MilkyWay.class);
-					this.putClassInMap(myClasses, "Earth" , Earth.class);
-					
+					this.updateAll();
 					
 				}
 	
@@ -58,6 +48,10 @@ public class Universe {
 					
 					aMap.put( aKey, aClass );
 					
+				}
+				
+				public void putClassInMap( HashMap<String, String> aMap, String aKey, String aMenu){
+					aMap.put(aKey, aMenu);
 				}
 				
 				
@@ -73,9 +67,7 @@ public class Universe {
 				}
 				
 				
-				public HashMap< String, Class<?> > getIDs(){
-					return this.myIDs;
-				}
+				
 				public HashMap<String, Class<?> > getGalaxies(){
 					return this.myGalaxies;
 				}
@@ -85,23 +77,24 @@ public class Universe {
 				 * If key found, returns the class, else it will return null.
 				 * 
 				 */
-				public Class<?> getItemByName(String aName ) {
+				public String getItemByName(String aName ) {
 					
 					Class<?> determinedClass = Universe.class;
-					for( String s: this.getClasses().keySet() ) {
+					
 						
 						if( this.getClasses().containsKey(aName) ) {
-							determinedClass = this.getClasses().get(s);
 							
+							determinedClass = this.getClasses().get(aName);
+							System.out.println(determinedClass);
 						}
 						else {
 							System.out.println("Name not found.");
 							return null;
 						}
 					
-					}
 					
-					return determinedClass;
+					
+					return determinedClass.toString();
 					
 					
 				}
@@ -112,29 +105,12 @@ public class Universe {
 				 * 
 				 */
 				
-				public Class<?> getItemByID(String ID) {
+			
 					
-					fileHandler = new FileHandler();
-					fileHandler.openFiles("Universe.txt");
-					
-					Class<?> determinedClass = Universe.class;
-					for( String s: this.getIDs().keySet() ) {
-						
-						if (this.getIDs().containsKey(ID) ) {
-						          determinedClass = this.getIDs().get(s);
-						}
-						else {
-							System.out.println("ID not found. ");
-							return null;
-						}
-						
-						
-					}
-					
-					return determinedClass;
+			
 				
 					
-				}
+				
 				/*
 				 * 
 				 * 
@@ -157,8 +133,27 @@ public class Universe {
 				 * Unused method
 				 */
 				public void updateAll() {
+					this.putClassInMap(myClasses, "Planets", Planet.class);
+					this.putClassInMap(myMenus,"Planets" , "planetMenu");
+					
+					this.putClassInMap(myClasses, "Stars" , Stars.class);
+					this.putClassInMap(myMenus , "Stars" , "starMenu");
+					
+					this.putClassInMap(myClasses, "Galaxies", Galaxy.class);
+					this.putClassInMap(myMenus, "Galaxies", "galaxyMenu");
+					
+					this.putClassInMap(myGalaxies, "Milky Way" , MilkyWay.class);
+					this.putClassInMap(myMenus, "Milky Way", "milkyWayMenu");
+					
+					this.putClassInMap(myClasses, "Earth" , Earth.class);
+					this.putClassInMap(myMenus, "Earth", "earthMenu");
+				}
+				
+				public void updateMenus() {
 					
 				}
+				
+				
 				
 				public void add() {
 					
