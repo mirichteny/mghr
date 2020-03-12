@@ -31,7 +31,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 
-public class MainGUI extends Application{
+public class GUIApp extends Application{
 	
 	
 	private MainController mainController;
