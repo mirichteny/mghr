@@ -1,7 +1,9 @@
 package GUI;
-import LogicClasses.Universe;
+
+
+
 /*
- * GUIApp class corresponds to Main logic class.
+ * MainGUI class corresponds to Main logic class.
  * 
  */
 
@@ -26,10 +28,13 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 
-public class GUIApp extends Application{
+public class MainGUI extends Application{
 	
+	
+	private MainController mainController;
 	private Button titlePageStartButton;
 	private Button titlePageExitButton;
 	private Button backButton;
@@ -43,6 +48,7 @@ public class GUIApp extends Application{
 	private	Stage window;
 	private Image appBackground;
 	private Scene currentScene,previousScene,introMenu,galaxyMenu,milkyWayMenu,andromedaMenu,planetMenu,starsMenu,earthMenu,emptyMenu;
+	private String currentSceneName,previousSceneName,introMenuName,galaxyMenuName,milkyWayMenuName,andromedaMenuName,planetMenuName,starsMenuName,earthMenuName,emptyMenuName;
 	private final int windowWidth = 700;
 	private final int windowHeight = 700;
 	
@@ -53,10 +59,12 @@ public class GUIApp extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
+		
 		window = primaryStage;
-		appBackground = new Image("file:SpaceBackGround.jpg");
+		appBackground = new Image("SpaceBackGround.jpg");
 		ImageView imageView = new ImageView();
 		imageView.setImage(appBackground);
+		Color backgroundColor = Color.AQUAMARINE;
 		
 		backButtonGalaxy = new Button("Back");
 		backButtonMilkyWay = new Button("Back");
@@ -93,8 +101,10 @@ public class GUIApp extends Application{
 			//For planets
 		backButtonPlanets.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
+				
 				window.setScene(milkyWayMenu);
-			}
+				
+				}
 		});
 		
 		
@@ -142,17 +152,19 @@ public class GUIApp extends Application{
 			}
 			
 		});
-		
+				
 		
 		//Making titlePage layout.
 		VBox titlePageVBox = new VBox(30);
 		HBox titlePageHBox = new HBox(30);
 		titlePageVBox.getChildren().addAll(titlePageStartButton,titlePageExitButton);
+		titlePageVBox.setAlignment(Pos.CENTER);
 		
 		StackPane titlePagePane = new StackPane();
 		titlePagePane.getChildren().addAll(imageView,titlePageVBox);
 		
 		introMenu = new Scene(titlePagePane,windowWidth,windowHeight);
+		introMenuName = "introMenu";
 		
 		//Galaxy Menu Buttons
 		Button andromedaButton = new Button("Andromeda");
@@ -190,7 +202,7 @@ public class GUIApp extends Application{
 		
 		//Instantiating the galaxyMenu scene
 		galaxyMenu = new Scene(galaxiesLayout, windowWidth,windowHeight);
-		
+		galaxyMenuName = "galaxyMenu";
 		
 		/*
 		 * This would be the code for setting up the Andromeda contents.
@@ -216,10 +228,15 @@ public class GUIApp extends Application{
 		//Handling milkyWay Events
 		
 		searchButton.setOnAction(new EventHandler<ActionEvent>() {
+			String galaxyUserOutput = userInput.getText();
+			
 			public void handle(ActionEvent event) {
 				String galaxyUserOutput = userInput.getText();
-			
-				System.out.println(galaxyUserOutput);
+				
+				mainController = new MainController();
+				
+				System.out.println(mainController.getUserRequestedSearch(userInput.getText()));
+				
 				
 				if( galaxyUserOutput.equalsIgnoreCase("Planets")) {
 					window.setScene(planetMenu);
@@ -248,8 +265,9 @@ public class GUIApp extends Application{
 		flowPane.setOrientation(Orientation.VERTICAL);
 		
 		//Defining milkyWay Scene
-		
+	
 		milkyWayMenu = new Scene(flowPane, windowWidth,windowHeight);
+		milkyWayMenuName = "milkyWayMenu";
 		
 		
 		
@@ -270,6 +288,12 @@ public class GUIApp extends Application{
 			}
 		});
 		
+		venusButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				VenusDisplay.display();
+			}
+		});
+		
 		
 		
 		//Defining planet layout
@@ -281,8 +305,7 @@ public class GUIApp extends Application{
 		
 		//Instantiating the planetMenu
 	     planetMenu = new Scene(planetsLayout, windowWidth, windowHeight);
-		
-	     
+	     planetMenuName = "planetMenu";  
 	     
 	     
 	    //For stars menu
@@ -308,7 +331,7 @@ public class GUIApp extends Application{
 	 	starLayout.setAlignment(Pos.CENTER);
 	 	
 	 	starsMenu = new Scene(starLayout,windowWidth,windowHeight);	     
-		
+		starsMenuName = "starsMenu";
 	 	//Defining earth menu layout
 	 	
 	 	 BorderPane earthBorder = new BorderPane();
@@ -325,13 +348,13 @@ public class GUIApp extends Application{
 		  
 		 
 		  centerPaneEarth.getChildren().addAll(backButtonEarth,new Label("Description") );
-		  TextField txtName = new TextField ("Enter description.");
+		  TextField txtName = new TextField ("EARTH");
 		  txtName.setPrefWidth (100);
 		  centerPaneEarth.getChildren().add (txtName);
 		   
 		  // Label and textarea for description
 		  centerPaneEarth.getChildren().add (new Label ("Info"));
-		  TextArea txtInfo = new TextArea ("Earth description");
+		  TextArea txtInfo = new TextArea ("Planet Earth is the only planet in\n our solar system naturally habitable\n by living organisms." + "\n" +" Age: Approx 4.8 Billion Years.");
 		  txtInfo.setPrefWidth(200);
 		  txtInfo.setPrefRowCount(8);
 		  txtInfo.setPrefColumnCount(40);
