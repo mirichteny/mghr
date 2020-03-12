@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 /* This class is a GUI version of the stars text based class which creates eight buttons 
 namely Sun, Hypergiants, Supergiants, Giants, Subgiants, Subdwarfs, Dwarfs and Neutron Stars and aligns them to the center of the stage */
-public class Stars extends Application {
+public class StarsGUI extends Application {
 	
 	// creating all buttons
 	private Button sunButton;
