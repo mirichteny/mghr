@@ -1,0 +1,40 @@
+
+
+		Classes 
+		
+			ID: Milky Way 
+			ID: Andromeda 
+			ID: Planet    
+			ID: Merucry   
+			ID: Earth     
+			ID: Venus     
+			ID: Mars      
+			ID: Jupiter   
+			ID: Saturn    
+			ID: Uranus    
+			ID: Neptune   
+			ID: Stars     
+			
+			
+			Planets:
+					Earth Keywords: 
+									Terresterial , 4.8 Billion Years 
+					
+					Mercury Keywords: Terresterial, 
+					
+					Mars Keywords: 
+					
+					Venus Keywords:
+					
+					Jupiter Keywords: Jovian
+					
+					Saturn Keywords: Jovian
+					
+					Uranus Keywords: Jovian
+					
+					Neptune Keywords: Jovian
+					 
+			
+			
+			
+		
