@@ -1,8 +1,9 @@
+/* The galaxy class is a blueprint for the different galaxies in the
+solar system and its components like the stars and gives out the info for the stars
+and the galaxy itself */
 
 public class Galaxy {
-	/* The galaxy class is a blueprint for the different galaxies in the
-	solar system and its components like the stars and gives out the info for the stars
-	and the galaxy itself */
+
 	
   	private String galaxyName;
 	private String starName;
