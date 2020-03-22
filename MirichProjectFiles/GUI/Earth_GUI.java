@@ -10,14 +10,33 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
-/* This class is a GUI version of the Earth text based class which creates a button 
-Countries and creates a text area saying "Earth description" */
+/* class Earth_GUI
+ * This class is a GUI version of the Earth text based class which creates a button 
+ * Countries and creates a text area saying "Earth description"
+ *
+ */
 public class Earth_GUI extends Application{
+	
+      /****** 
+       * Main method of the class
+       *
+       */
       public static void main (String[] args)
    {
       launch (args);
    }
    
+   /********
+   * start(Stage)
+   *
+   * This method sets up a stage and aligns the button "Countries" properly 
+   * and a text field to display the Earth description. Then it creates a scene 
+   * and sets the title "Earth" and displays the stage 
+   *
+   * @param primaryStage the stage needed for displaying the scenes
+   * @throws the Exception of any nature that might occur
+   *
+   */
    public void start(Stage primaryStage) throws Exception
    {
 	  BorderPane earthBorder = new BorderPane();
