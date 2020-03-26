@@ -13,7 +13,10 @@ import javafx.stage.Stage;
 /* class GalaxyMenuGUI
  * This class is a GUI version of the Galaxy text based class which creates two buttons 
  * Andromeda and Milky Way
- *
+ * 
+ * It contains the following instance variables:
+ * andromedaButton: a Button for Andromeda galaxy
+ * milkyWayButton: a Button for Milky Way galaxy
  */
 public class GalaxyMenuGUI extends Application {
 	
