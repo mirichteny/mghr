@@ -1,4 +1,4 @@
-package LogicClasses;
+
 /*
  * ItemCollection Class 
  * The following class is in charge of accessing different classes and accessing the information
