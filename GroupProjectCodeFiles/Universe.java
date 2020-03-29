@@ -133,7 +133,7 @@ public class Universe {
 				 * Unused method
 				 */
 				public void updateAll() {
-					this.putClassInMap(myClasses, "Planets", Planet.class);
+					this.putClassInMap(myClasses, "Planets", Planets.class);
 					this.putClassInMap(myMenus,"Planets" , "planetMenu");
 					
 					this.putClassInMap(myClasses, "Stars" , Stars.class);
