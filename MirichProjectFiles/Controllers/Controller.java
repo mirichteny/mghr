@@ -11,7 +11,7 @@ import LogicClasses.*;
 
 
 public class Controller {
-	
+			// instance variables of controller
 			private GUIApp myGUI;
 			private Universe myUniverse;
 			
@@ -23,11 +23,11 @@ public class Controller {
 				
 			}
 			
-			
+			// gets item requested by user
 			public String getUserRequestedSearch(String userInput) {
 				return myUniverse.getItemByName(userInput);
 			}
-			
+			// updates menus
 			public void update() {
 				myUniverse.updateMenus();
 			}
