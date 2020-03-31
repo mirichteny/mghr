@@ -1,7 +1,10 @@
 package LogicClasses;
 import java.util.HashMap;
 import java.util.Scanner;
-
+/* class Countries
+ * This class is a Logic version of the Countries text based class which prompts user 
+ * to enter the country name and shows the provided information of it
+ */
 public class Countries  {
 
 	
