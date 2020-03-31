@@ -7,8 +7,12 @@ package LogicClasses;
 public class MilkyWay extends Galaxy {
 									
 						
-						
-						
+						/* MilkyWay(String aGalaxyName, String aRadius) constructor
+						* inherits the following parameters
+						*
+						* @param aGalaxyName name of the galaxy
+						* @param aRadius radius
+						*/
 						public MilkyWay(String aGalaxyName, String aRadius) {
 							super(aGalaxyName, aRadius);
 							
@@ -21,7 +25,7 @@ public class MilkyWay extends Galaxy {
 						public MilkyWay(MilkyWay m) {
 							this();
 						}
-					
+						// shows display menu with the message below and returns output
 						public String displayMenu() {
 							
 							String output = "THIS IS THE MILKY WAY MENU!";
@@ -29,7 +33,7 @@ public class MilkyWay extends Galaxy {
 							return output;
 						
 						}
-						
+						// get galaxy description
 						public String getGalaxyDesc() {
 							
 							String word1 = "";
