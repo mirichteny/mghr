@@ -45,7 +45,6 @@ public class Stars {
 				
 				
 				
-				
 			}
 			
 			/* setStarType(String)
@@ -124,7 +123,7 @@ public class Stars {
 			/* getStarTypes()
 			 * Getter method for types of the star
 			 * Returns a list of star types by adding them to it
-			 * @return an ArrayList of star types
+			 * @return copyStarTypes returns ArrayList of star types
 			 *
 			 */
 			public ArrayList<String> getStarTypes(){
@@ -141,7 +140,7 @@ public class Stars {
 			/***
 			 * displayMenu()
 			 * This method displays the planet menu on the screen
-			 * @return output 
+			 * @return output returns output of sun and other stars options
 			 *
 			 */
 			public String displayMenu() {
