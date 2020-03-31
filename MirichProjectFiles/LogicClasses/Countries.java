@@ -6,9 +6,9 @@ import java.util.Scanner;
  * to enter the country name and shows the provided information of it
  */
 public class Countries  {
-
-	
-	
+	/*
+       * Main method of the class
+       */	
 	 public static void main(String[] args) {
 	
 		// Hash map
