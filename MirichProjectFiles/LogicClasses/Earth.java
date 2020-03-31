@@ -37,7 +37,13 @@ public class Earth extends Planet {
 				public Earth() {
 					
 				}
-				
+				/*Earth(double aPlanetRadius, double aPlanetMass)
+				* constructor for the class
+				*
+				* gets information from the following parameters
+				* @param double aPLanetRadius radius of planet
+				* @param double aPlanetMass mass of planet
+				*/
 				public Earth(double aPlanetRadius, double aPlanetMass) {
 					super(aPlanetRadius, aPlanetMass);
 				}
