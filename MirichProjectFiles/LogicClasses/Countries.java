@@ -11,7 +11,7 @@ public class Countries  {
        */	
 	 public static void main(String[] args) {
 	
-		// Hash map
+		// setting keys of HashMap
 
 		HashMap<String,Integer>  map = new HashMap<String, Integer>();
 			map.put("Canada", 500);
