@@ -13,12 +13,15 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Sphere;
-
+/* class VenusDisplay
+ * This class is a GUI version of the Venus text based class which 
+ * displays Venus visually
+ *
+ */
 public class VenusDisplay {
-		
+		// instance variables of Venus
 		private Image venusBackground;
 		private ImageView imageView = new ImageView();
-		
 		
 		public VenusDisplay() {
 			venusBackground = new Image("SpaceBackGround.jpg");
