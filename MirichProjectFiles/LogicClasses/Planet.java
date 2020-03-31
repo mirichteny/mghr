@@ -45,7 +45,7 @@ public class Planet {
 			/***
 			 * getGravity()
 			 * getter method for gravity of the planet
-			 * @return gravity 
+			 * @return gravity returns gravity
 			 *
 			 */
 			public double getGravity() {
@@ -57,7 +57,7 @@ public class Planet {
 			/***
 			 * getPlanetMass()
 			 * getter method for mass of the planet
-			 * @return planetMass 
+			 * @return planetMass returns mass of the planet
 			 *
 			 */
 			public double getPlanetMass() {
@@ -67,7 +67,7 @@ public class Planet {
 			/***
 			 * getMaterials()
 			 * getter method for materials of the planet
-			 * @return materials 
+			 * @return materials returns materials
 			 *
 			 */
 			public String[] getMaterials() {
@@ -77,7 +77,7 @@ public class Planet {
 			/***
 			 * getPlanetRadius()
 			 * getter method for radius of the planet
-			 * @return planetRadius 
+			 * @return planetRadius returns radius of the planet 
 			 *
 			 */
 			public double getPlanetRadius() {
@@ -88,7 +88,7 @@ public class Planet {
 			 * This method returns a description of the planet such as surface material,age
 			 * number of moons, etc.
 			 * 
-			 * @return the description of the planet
+			 * @return description returns the description of the planet
 			 */
 			public String getPlanetDescription() {
 				
@@ -103,7 +103,7 @@ public class Planet {
 			/***
 			 * displayMenu()
 			 * This method displays the planet menu on the screen
-			 * @return output 
+			 * @return output returns output
 			 *
 			 */
 			public String displayMenu() {
