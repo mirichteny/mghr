@@ -7,10 +7,15 @@ import java.util.ArrayList;
  * 
  * It contains the following instance variables:
  * PLANET_TYPE: type of planet
+ * earthProperties: list of Earth properties
  * mass: mass of planet
  * gravity: gravity of planet
  * planetRadius: radius of planet
- *
+ * planetsOrder: position in solar system of planets relative to the sun
+ * orbitalPeriod: orbital time of Earth 
+ * countries: list of countries
+ * continents: list of continents
+ * age: age of Earth
  */
 public class Earth extends Planet {
 
@@ -22,7 +27,7 @@ public class Earth extends Planet {
 				private final double mass = 5.972*Math.pow(10,24);
 				private final double gravity = 9.81; // m/s^2
 				private final double planetRadius = 6.3*Math.pow(10, 4);
-				private int planetsOrder = 3; //Position in solar system of planets relative to the sun
+				private int planetsOrder = 3; 
 				private double orbitalPeriod = 365.25; // days
 				private ArrayList<String> countries;
 				private HashMap <String, String> continents = new HashMap<>();
@@ -37,25 +42,25 @@ public class Earth extends Planet {
 					super(aPlanetRadius, aPlanetMass);
 				}
 				
-				
+				// get Orbital Period
 				public double getOrbitalPeriod() {
 					
 					return this.orbitalPeriod;
 				}
 				
 				
-				
+				// get countries
 				public ArrayList<String> getCountries(){
 					return this.countries;
 				}
 				
 				
-				
+				// display menu
 				public String displayMenu() {
 					return "";
 				}
 				
-				
+				// set Earth properties
 				public void addProperties(String aProperty) {
 					
 					this.earthProperties.add(aProperty);
