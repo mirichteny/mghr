@@ -1,6 +1,17 @@
 package LogicClasses;
 import java.util.HashMap;
 import java.util.ArrayList;
+/* class Earth
+ * This class is a Logic version of the Earth text based class which provides user
+ * the information of itself
+ * 
+ * It contains the following instance variables:
+ * PLANET_TYPE: type of planet
+ * mass: mass of planet
+ * gravity: gravity of planet
+ * planetRadius: radius of planet
+ *
+ */
 public class Earth extends Planet {
 
 	
