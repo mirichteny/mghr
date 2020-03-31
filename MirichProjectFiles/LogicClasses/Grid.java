@@ -35,6 +35,7 @@ public class Grid {
 				
 		}
 	}
+	// sets parameters for grid
 	public Grid(Grid g) {
 		this(g.rowSize,g.columnSize,g.symbol);
 	}
