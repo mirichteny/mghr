@@ -321,7 +321,7 @@ public class TextBasedApp {
 								return this.myScanner;
 							}
 							/*********
-							 * publci static void main()
+							 * public static void main()
 							 * @param args
 							 * This is the class that you need to run in order to start the text based version of our application
 							 */
