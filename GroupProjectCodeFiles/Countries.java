@@ -1,13 +1,17 @@
 import java.util.HashMap;
 import java.util.Scanner;
-
+/* class Countries
+ * This class is a Logic version of the Countries text based class which prompts user 
+ * to enter the country name and shows the provided information of it
+ */
 public class Countries  {
-
-	
-	
+	/*
+       * Main method of the class
+       */	
 	 public static void main(String[] args) {
 	
-		// Hash map
+		// setting keys and values of HashMap
+
 
 		HashMap<String,Integer>  map = new HashMap<String, Integer>();
 			map.put("Canada", 500);
