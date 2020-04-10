@@ -17,15 +17,29 @@ public class MilkyWay extends Galaxy {
 							super(aGalaxyName, aRadius);
 							
 						}
-						
+                                               /***
+						* MilkyWay()
+						* Default constructor
+						*/
 						public MilkyWay() {
 							
 						}
 						
+						/***
+						* MilkyWay(MilkyWay)
+						* @param m: a MilkyWay input 
+						* Copy constructor
+						*/
 						public MilkyWay(MilkyWay m) {
 							this();
 						}
-						// shows display menu with the message below and returns output
+	
+						/*
+						* displayMenu()
+						* shows display menu with the message below and returns output
+						* @returns output
+						*
+						*/
 						public String displayMenu() {
 							
 							String output = "THIS IS THE MILKY WAY MENU!";
@@ -33,7 +47,12 @@ public class MilkyWay extends Galaxy {
 							return output;
 						
 						}
-						// get galaxy description
+						/* getGalaxyDesc()
+						*
+						* gives galaxy description to user
+						* @returns desc: the description of the galaxy
+						*
+						*/
 						public String getGalaxyDesc() {
 							
 							String word1 = "";
