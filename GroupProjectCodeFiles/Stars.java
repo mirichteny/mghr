@@ -1,29 +1,22 @@
-/*Another object class. Anyone who works on this class should implement properties of stars, ( luminisity,
-	 * star type: (dwarf star or super giant? ) , etc.
+
+import java.util.ArrayList;
+/*
+	 * The Stars class gives the different characteristics of the star like its
+	 * luminosity, mass, radius and also tells you the star type, for eg. hypergiants, giants, dwarfs, etc.
 	 * 
-	 * 
+	 * It contains the following instance variables:
+	 * ID: a String type constant
+	 * starTypes: an ArrayList of String type containing the list of different star types
+	 * starType: a String type variable which stores the type of the stars
+	 * luminosity: a double type variable which stores the luminosity of the stars 
+	 * starColors: an ArrayList of String type containing the list of different star colors
+	 * starColor: a String type variable which stores the color of the stars
+	 * radius: a double type variable which stores the radius of the stars
+	 * mass: a double type variable which stores the mass of the stars
 	 * 
 	 */
-import java.util.ArrayList;
 public class Stars {
 	
-	/*Another object class. Anyone who works on this class should implement properties of stars, ( luminosity, color, mass, surface temperature,
-	 * star type: (dwarf star or super giant? ) , etc. 
-	 * ( 3 maximum from the properties AND star type)
-	 * 
-	 * 
-	 */
-
-	
-
-	
-	
-	
-			
-	
-			
-
-
 			private final String ID = "0005";
 			private ArrayList<String> starTypes;
 			private String starType;
@@ -33,6 +26,11 @@ public class Stars {
 			private double radius;
 			private double mass;
 			
+			/****
+			 * a default constructor of the class Stars() which sets the type, luminosity
+			 * and the colors of the stars 
+			 *
+			 */
 			public Stars() { 
 				
 				this.starTypes = new ArrayList<String>();
@@ -45,11 +43,13 @@ public class Stars {
 				
 				
 				
-				
 			}
 			
-			//Checks whether method setStarType contatins star and assigns instance variable to it
-			//@param aStarType type of a star
+			/* setStarType(String)
+			 * Checks whether method setStarType contatins star and assigns instance variable to it
+			 * @param aStarType type of a star
+			 *
+			 */
 			
 			public void setStarType(String aStarType) {
 					for( String star: this.getStarTypes()) {
@@ -60,23 +60,40 @@ public class Stars {
 					}
 			}
 			
-			//@param aLuminosity luminosity of a star
+			
+			/* setLuminosity(double)
+			 * Setter method for luminosity of the star
+			 * @param aLuminosity luminosity of a star
+			 *
+			 */
 			
 			public void setLuminosity(double aLuminosity) {
 				this.luminosity = aLuminosity;
 			}
 			
-			//@param aColor color of a star
 			
+			/* setStarColor(String)
+			 * Setter method for color of the star
+			 * @param aColor color of a star
+			 *
+			 */
 			public void setStarColor(String aColor) {
 				this.starColor = aColor;
 			}
 			
-			// adds star types
+			/* getStarType()
+			 * Getter method for type of the star
+			 * @return type of the star
+			 *
+			 */
 			public String getStarType() {
 				return this.starType;
 			}
 			
+			/* addAll()
+			 * Adds all the star types 
+			 *
+			 */
 			public void addAll() {
 				
 				this.getStarTypes().add("hypergiants");
@@ -87,15 +104,26 @@ public class Stars {
 				this.getStarTypes().add("dwarfs");
 				this.getStarTypes().add("neutronstars");
 			}
-			//@return luminosity of a star
 			
+			/* getLuminosity()
+			 * Getter method for luminosity of the star
+			 * @return luminosity of a star
+			 *
+			 */
 			public double getLuminosity() {
 				
 				return this.luminosity;
 				
 			}
-			//Returns a list of star types by adding them to it 
-			//@return a list of star types
+	
+			
+			
+			/* getStarTypes()
+			 * Getter method for types of the star
+			 * Returns a list of star types by adding them to it
+			 * @return copyStarTypes returns ArrayList of star types
+			 *
+			 */
 			public ArrayList<String> getStarTypes(){
 				ArrayList<String> copyStarTypes = new ArrayList<String>();
 				
@@ -106,7 +134,13 @@ public class Stars {
 				
 				return copyStarTypes;
 			}
-	
+			
+			/***
+			 * displayMenu()
+			 * This method displays the planet menu on the screen
+			 * @return output returns output of sun and other stars options
+			 *
+			 */
 			public String displayMenu() {
 				
 				
