@@ -1,3 +1,4 @@
+
 import java.lang.reflect.Method;
 import java.util.*;
 /*
@@ -12,40 +13,37 @@ import java.util.*;
  */
 public class Main {
 	
-	
-		
+		// instance variables of Main class		
 		private Universe myUniverse;    // itemCollection
 		private HashMap< String , String > myMenus = new HashMap<>(); // HashMap of Menus
 		private String currentMenuOption;
 		private ArrayList<String> menuOptions = new ArrayList<String>();
 		private String currentMenu;
-		
-		
-	
+		private String previousMenu;
+			
 		
 		
 		/*
-		 * Main constructor
+		 *  Main() constructor
 		 */
 		public Main() {
 			Galaxy galaxy = new Galaxy();
 			MilkyWay milky = new MilkyWay();
-			Planets pl = new Planets();
+			Planet pl = new Planet();
 			Earth earth = new Earth();
 			Stars stars = new Stars();
 			
 			String GalaxyMenuOutput = "THIS IS THE UNIVERSE MENU";
 			String output0 = " + + + + + + + + + + + + + + + + + + + + + + + + + + + + +";
-			String output1 = " +  -----------         -----------                      +";
-			String output2 = " + | Milky Way  |      | Andromeda |                     + " ;
-			String output3 = " +  -----------         -----------                      +";
-			String outputa = " +                                                       +";
-			String outputb = " +                                                       +";
-			String outputc = " +                                                       +";
+			String output1 = " +                                                       +";
+			String output2 = " +                                                       +";
+			String output3 = " +                                                       +";
+			String outputa = " +        -----------                -----------         +";
+			String outputb = " +       | Milky Way |              | Andromeda |        +";
+			String outputc = " +        -----------                -----------         +";
 			String outputd = " +                                                       +";
 			String outpute = " +                                                       +";
 			String outputf = " +                                                       +";
-			String outputg = " +                                                       +";
 			String output4 = " + + + + + + + + + + + + + + + + + + + + + + + + + + + + + ";
 			String output5 = " Which galaxy would you like to visit? ";
 			GalaxyMenuOutput = output0 + "\n" + output1 + "\n" + output2 + "\n" + output3 + "\n" + output4 + "\n" + output5;
@@ -71,7 +69,12 @@ public class Main {
 			
 		
 		}
-		
+		/* displayMenu(String aKeyWord)
+		* constructor that displays menu
+		*
+		* @param aKeyWord key word
+		* @return desiredMenu returns the desired Menu
+		*/
 		public String displayMenu(String aKeyWord) {
 			String desiredMenu = "";
 			
@@ -88,30 +91,39 @@ public class Main {
 			return desiredMenu;
 		}
 		
+		
+	
+		// get Universe
 		public Universe getUniverse() {
 			return this.myUniverse;
 		}
-		
+		// get keys and values from HashMap
 		public HashMap<String , String> getMenus(){
 			
 			return this.myMenus;
 		}
-		
+		// get current menu option
 		public String getCurrentMenuOption() {
 			
 			return this.currentMenuOption;
 		}
-		
+		// update current menu option
 		public void updateCurrentMenuOption(String aMenuOption) {
 			this.currentMenuOption = aMenuOption;
 		}
-	
+		/* goToPreviousMenu()
+		* constructor that allows to back to previous menu
+		*
+		* @return prevMenu returns previous menu
+		*/
 		public String goToPreviousMenu() {
 			String prevMenu = "";
 			
 			return prevMenu;
 		}
-		
+		/* titlePage()
+		* constructor displays title page
+		*/
 		public void titlePage() {
 			String star = "+";
 			System.out.println("+ + + + + + + + + + + + + + + + + + + + + + + + + ");
@@ -126,7 +138,12 @@ public class Main {
 			
 			
 		}
-		
+		/* createScanner(String scannerTopic)
+		* constructor that creates Scanner and returns output
+		*
+		* @param scannerTopic topic from user's input
+		* @return output returns output
+		*/
 		public String createScanner(String scannerTopic) {
 		
 			Scanner input = new Scanner(System.in);
@@ -135,15 +152,18 @@ public class Main {
 			
 			return output;
 		}
-		
+		// constructor that puts menu and key to HashMap
 		public void putClassInMap( HashMap<String, String> aMap  , String aKey, String aMenu) {
 			
 			aMap.put( aKey, aMenu );
 			
 		}
 		
-		
-		
+		/* drawSquares(Grid g)
+		* constructor that goes through size of rows and columns to build squares
+		*
+		* @param g grid
+		*/
 		public void drawSquares(Grid g) {
 			
 			for(int i = 0 ; i < g.getRowSize(); i++) {
@@ -156,23 +176,28 @@ public class Main {
 			}
 			
 		}
-		
+		/* displayGridMenu()
+		* by setting the parameters for grid, constructor then creates grid menu
+		* @return g.outputGrid() returns output of the grid
+		*/
 		public String displayGridMenu() {
 			Grid g = new Grid(50,50, "*");
 			return g.outputGrid();
 		}
 		
-		
-		
-		
+		/* searchForMethod(HashMap<String, Class<?>> map, String aKey) 
+		* searches methods in HashMap and if found displays the appropriate message
+		*
+		* @param map map
+		* @aKey key
+		*/
 		public void searchForMethod(HashMap<String, Class<?>> map, String aKey) {
 			
 			Method determinedMenuMethod = null;
 			Class<?> myClass = map.get(aKey);
 			
 			for( Method method: myClass.getMethods()) {
-				
-				
+					
 				
 				if( method.getName().contentEquals("displayMenu") ) {
 					
@@ -187,16 +212,15 @@ public class Main {
 		}
 		
 		
-		
-		
-		
-		
+		// get menu option	
 		public String getMenuOption() {
 			return "";
 		}
 		
-		
-		
+		/*
+		* The main constructor that helps thr Main class to handle and transit between classes
+		* 
+		*/
 		public static void main(String[] args) {
 			
 			
@@ -220,19 +244,7 @@ public class Main {
 				System.out.println("Does not exist, try again ");
 				userAnswer = userInput.nextLine();
 			}
-			//Commented out below code due to situational.
-				/*
-				for ( String menuOption: textBasedApp.menuOptions) { //Loop through arraylist of menu options and updates current menu .
-					if( menuOption.equalsIgnoreCase(userAnswer)) {
-						
-						textBasedApp.updateCurrentMenuOption(userAnswer);
-					}
-				
-				}
-				System.out.println(textBasedApp.getMenus().get(userAnswer));
-				Scanner reader = new Scanner(System.in);
-				System.out.println("You are currently in " + textBasedApp.getCurrentMenuOption());
-				*/
+			
 			
 			if( textBasedApp.myUniverse.getGalaxies().containsKey(userAnswer) ) {
 				System.out.println("Class found!");
@@ -253,8 +265,8 @@ public class Main {
 						userIn = reader.nextLine();
 					}
 					Class<?> nextClass = textBasedApp.myUniverse.getClasses().get(userIn);
-					if ( nextClass == Planets.class ) {
-						Planets p = new Planets();
+					if ( nextClass == Planet.class ) {
+						Planet p = new Planet();
 						System.out.println(p.getPlanetDescription());
 						System.out.println(p.displayMenu());
 						Scanner planetReader = new Scanner(System.in);
