@@ -7,13 +7,13 @@ package LogicClasses;
 public class MilkyWay extends Galaxy {
 									
 						
-						/* MilkyWay(String aGalaxyName, String aRadius) constructor
+						/* MilkyWay(String aGalaxyName, double aRadius) constructor
 						* inherits the following parameters
 						*
 						* @param aGalaxyName name of the galaxy
 						* @param aRadius radius
 						*/
-						public MilkyWay(String aGalaxyName, String aRadius) {
+						public MilkyWay(String aGalaxyName, double aRadius) {
 							super(aGalaxyName, aRadius);
 							
 						}
