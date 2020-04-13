@@ -34,6 +34,26 @@ public class Galaxy {
 		this.setGalaxyRadius(aGalaxyRadius);
 	        }
 	
+	
+	 /* Galaxy(String, double)
+	* Constructor for the class
+	*
+	* @param aGalaxyName The name of the galaxy
+	* @param aGalaxyRadius The radius of the galaxy given 
+	*
+	*/    
+	public Galaxy( String aGalaxyName, double aGalaxyRadius) {
+		this.setGalaxyName(aGalaxyName);
+		this.setGalaxyRadius(aGalaxyRadius);
+    }
+	
+	/* Galaxy()
+	 * default constructor
+	 */
+	public Galaxy() {
+		
+	}
+	
 	/*************
 	 * displayMenu()
 	 *
