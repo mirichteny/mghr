@@ -27,7 +27,6 @@ public class Main {
 		 *  Main() constructor
 		 */
 		public Main() {
-			Galaxy galaxy = new Galaxy();
 			MilkyWay milky = new MilkyWay();
 			Planet pl = new Planet();
 			Earth earth = new Earth();
