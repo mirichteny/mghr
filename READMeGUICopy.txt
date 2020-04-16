@@ -51,7 +51,8 @@ Using the GUI app:
   When you click on the Milky Way button, you will be prompted with a search bar. This is where you search for certain objects in that specific galaxy.
   The text you put into that search bar will depend on the label and what it tells what you can or cannot search. 
   Follow the instructions on the label below the search bar and you will come across different scenes depending on what you search. 
-  If you search "Planets", a collection of buttons that have some planets as labels will show up. Depending on what you click, pop up menus may appear. 
+  The two possible searches are "Planets" and "Stars", anything else will bring up nothing when clicking the "search" button.
+  If you search "Planets", a collection of buttons that have some planets as labels will show up. Depending on what you click, pop up menus may appear. I
  And if those pop up menus appear, you may be stuck and cannot exit out of it (because you are in a special window), simply close the pop up menu if you want to access the main app again.
 
 SPECIAL WINDOWS:
