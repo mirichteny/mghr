@@ -17,7 +17,7 @@ import java.util.ArrayList;
 	 * mass: a double type variable which stores the mass of the stars
 	 * 
 	 */
-public class Star {
+public class Stars {
 	
 			private final String ID = "0005";
 			private ArrayList<String> starTypes;
@@ -33,7 +33,7 @@ public class Star {
 			 * and the colors of the stars 
 			 *
 			 */
-			public Star() { 
+			public Stars() { 
 				
 				this.starTypes = new ArrayList<String>();
 				this.starType = "";
